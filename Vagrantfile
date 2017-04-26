@@ -5,7 +5,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   #config.vm.box_url = 'https://vagrantcloud.com/ubuntu/boxes/trusty64/versions/14.04/providers/virtualbox.box'
   
   config.vm.network :forwarded_port, guest: 4444, host: 4444
-  config.vm.network :forwarded_port, guest: 3000, host: 3005
+  config.vm.network :forwarded_port, guest: 3000, host: 3000
+  config.vm.network :forwarded_port, guest: 9000, host: 9000
   #config.vm.network :private_network, ip: "192.168.33.10"
   #config.vm.provision "shell", path: "script.sh"
 
@@ -24,8 +25,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   
   config.vm.provision "shell", privileged: false, inline: 'curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -'  
   config.vm.provision "shell", inline: 'apt-get install -y nodejs'  
-  config.vm.provision "shell", inline: 'apt-get install -y mongodb-org'
-  config.vm.provision "shell", inline: 'service mongod start'
-
-  config.vm.provision "shell", inline: 'npm install mongoose'
+  config.vm.provision "shell", inline: 'npm install npm@latest -g'
+  #config.vm.provision "shell", inline: 'apt-get install -y mongodb-org'
+  #config.vm.provision "shell", inline: 'service mongod start'
+  #config.vm.provision "shell", inline: 'npm install mongoose'
+  #config.vm.provision "shell", inline: 'npm install -g @angular/cli'
+  
 end
