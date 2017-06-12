@@ -1,6 +1,9 @@
-./angular-tour-of-heroes/node_modules/*
 angular-tour-of-heroes/node_modules/
 
-*.js
+angular-tour-of-heroes/src/*.js
+angular-tour-of-heroes/src/*.js.map
 
-*.map
+angular-tour-of-heroes/src/app/*.js
+angular-tour-of-heroes/src/app/*.js.map
+angular-tour-of-heroes/src/app/cliente/*.js
+angular-tour-of-heroes/src/app/cliente/*.js.map
